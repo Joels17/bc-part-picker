@@ -2,7 +2,7 @@ import React from 'react';
 import PartSelectorList from './PartSelectorList';
 import PartList from './PartList';
 import { useSelector, useDispatch } from 'react-redux';
-import { mainPage, partsPage } from '../slices/pageSlice';
+import { mainPage, partsPage, setPartType } from '../slices/pageSlice';
 import { deleteAll } from '../slices/cartSlice';
 import Button from '@mui/material/Button';
 
@@ -11,6 +11,7 @@ function PartsPage() {
 
 	const onClick = (e) => {
 		dispatch(deleteAll());
+		dispatch(setPartType('null'));
 		dispatch(mainPage());
 	};
 

@@ -18,7 +18,7 @@ function PartSelector(props) {
 						SELECT / EDIT
 					</Button>
 				</div>
-				<div className="innerColumnRight">
+				<div id="psText" className="innerColumnRight">
 					<p>{props.part.name}</p>
 				</div>
 			</div>

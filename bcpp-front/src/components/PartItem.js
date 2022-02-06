@@ -7,13 +7,6 @@ function PartItem(props) {
 	const dispatch = useDispatch();
 	const cart = useSelector((state) => state.cart.items);
 
-	useEffect(() => {
-		console.log('New value', cart);
-		return () => {
-			console.log('Prev value', cart);
-		};
-	}, [cart]);
-
 	const onClick = (e) => {
 		dispatch(
 			addItem({ id: props.id, name: props.title, partType: props.partType })

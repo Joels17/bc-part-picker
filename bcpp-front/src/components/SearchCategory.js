@@ -31,8 +31,13 @@ function SearchCategory() {
 	};
 
 	return (
-		<div id="searchcategory">
-			<form method="get" id="searchcategoryForm" onSubmit={onSubmit}>
+		<div id="searchcategory" className="center">
+			<form
+				class="center"
+				method="get"
+				id="searchcategoryForm"
+				onSubmit={onSubmit}
+			>
 				<TextField onChange={onChange} type="text" placeholder="Search.." />
 			</form>
 			{searchError ? <p>{searchError}</p> : ''}
