@@ -1,15 +1,15 @@
 import React from 'react';
-import PartSelector from './PartSelector';
-
-const temp = ['Board', 'Trucks', 'Wheels'];
+import PartSelectorList from './PartSelectorList';
+import PartList from './PartList';
 
 function PartsPage() {
 	return (
 		<div id="partpage">
 			<p>Parts page!!!</p>
-			{temp.map((partType) => (
-				<PartSelector key={partType} partName={partType} />
-			))}
+			<div id="flexthis">
+				<PartSelectorList />
+				<PartList partType="Wheels" />
+			</div>
 		</div>
 	);
 }
