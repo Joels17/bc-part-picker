@@ -30,10 +30,16 @@ function SearchCategory() {
 			});
 	};
 
+	const onCustomButton = (e) => {
+		alert(
+			'Full customization of parts and compatibilities with inventory scanner'
+		);
+	};
+
 	return (
 		<div id="searchcategory" className="center">
 			<form
-				class="center"
+				className="center"
 				method="get"
 				id="searchcategoryForm"
 				onSubmit={onSubmit}
@@ -42,6 +48,7 @@ function SearchCategory() {
 			</form>
 			{searchError ? <p>{searchError}</p> : ''}
 			<Button
+				className="formButs"
 				id="searchcategoryButton"
 				disabled={!searchValue}
 				variant="contained"
@@ -50,6 +57,14 @@ function SearchCategory() {
 				value="Submit"
 			>
 				Start Picking!
+			</Button>
+			<Button
+				onClick={onCustomButton}
+				id="customButton"
+				className="formButs"
+				variant="contained"
+			>
+				Custom
 			</Button>
 		</div>
 	);
