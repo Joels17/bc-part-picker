@@ -13,7 +13,8 @@ class CategoriesController < ApplicationController
         @categories = Category.where(name: params[:name])
       end
       if !@categories.empty?
-        @parts = @categories[0].parts
+        # @parts = @categories[0].parts
+      @parts =  Part.where(category_id: @categories[0].id).distinct.pluck(:part_type)
       end
       # if @parts.empty?
       #   @parts = Part.all
@@ -21,6 +22,10 @@ class CategoriesController < ApplicationController
       # else
         render json: @parts
       # end
+    end
+
+    def build_gear
+
     end
 
     # GET /categories/1
