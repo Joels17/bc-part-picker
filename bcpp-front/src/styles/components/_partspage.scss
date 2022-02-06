@@ -4,9 +4,9 @@
 
 .column {
   float: left;
-  border: 1px solid black;
   width: 50%;
   display: flex;
+  border: 3px solid black;
   flex-wrap: wrap;
   flex: 1;
   flex-direction: column;
@@ -16,34 +16,23 @@
 .innerColumnRight {
   float: left;
   width: 50%;
-  font-weight: bold;
+  display: flex;
   flex-wrap: wrap;
+  flex: 1;
   flex-direction: column;
   column-fill: balance;
 }
 
 .innerColumnLeft {
-  width: 1%;
+  float: left;
   display: flex;
   flex-wrap: wrap;
-  column-width: 10px;
-  flex: 1;
   flex-direction: column;
+  column-fill: balance;
 }
 
 #columnList {
   text-align: center;
-}
-
-.row:after {
-  //content: "";
-  //display: table;
-  //clear: both;
-  background-color: orange;
-}
-
-body {
-  //background: rgb(255, 255, 255);
 }
 
 .row {
@@ -52,10 +41,10 @@ body {
   display: flex;
   flex: 1;
   flex-direction: row;
+  background: #5ab9ea;
   display: flex;
   flex-wrap: wrap;
   width: 99%;
-  background-color: orange;
 }
 
 .row2 {
@@ -68,11 +57,15 @@ body {
   font-family: fantasy;
   text-align: center;
   font-size: 5em;
-  background: white;
 }
 
 #partselector {
   flex: wrap;
   flex-direction: row;
   //background-color: green;
+}
+
+#btnAdd {
+  border: none;
+  background: none;
 }

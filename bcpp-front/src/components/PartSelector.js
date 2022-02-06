@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setPartType } from '../slices/pageSlice';
+import Button from '@mui/material/Button';
 
 function PartSelector(props) {
 	const dispatch = useDispatch();
@@ -10,13 +11,17 @@ function PartSelector(props) {
 	};
 
 	return (
+		<div id='ps'>
 		<div id="partselector" className="row2">
 			<div className="innerColumnLeft">
-				<button onClick={onSubmit}>Add</button>
+				<button id="btnAdd">
+					<Button variant='contained' onClick={onSubmit}>Add</Button>
+				</button>
 			</div>
 			<div className="innerColumnRight">
 				<p>{props.partName}</p>
 			</div>
+		</div>
 		</div>
 	);
 }
