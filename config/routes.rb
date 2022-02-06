@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'categoriesearch/:name', to: 'categories#search'
   get 'compare/:id', to: 'parts#compare'
-  get 'build/:name', to: 'categories#build'
+  get 'build/:part_type', to: 'categories#build_gear'
 end

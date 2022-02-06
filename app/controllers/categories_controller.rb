@@ -25,18 +25,8 @@ class CategoriesController < ApplicationController
     end
 
     def build_gear
-      @category = Categeory.where(name: params[:name])
-      @part_categories =  Part.where(category_id: @category[0].id).distinct.pluck(:part_type)
-      @part_categories.each do |part|
-        @part_result += part
-      end
-      render json: @part_result
-
-
-
-
-
-
+      @parts = Part.where(part_type: params[:part_type])
+      render json: @parts
     end
 
     # GET /categories/1
