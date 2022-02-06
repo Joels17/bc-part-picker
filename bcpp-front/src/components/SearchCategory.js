@@ -1,4 +1,6 @@
 import React from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 export default class SearchCategory extends React.Component {
 	constructor() {
@@ -14,17 +16,22 @@ export default class SearchCategory extends React.Component {
 	render() {
 		return (
 			<div id="searchcategory">
-				<form method="get" id="searchcategoryForm">
-					<input onChange={this.onChange} type="text" placeholder="Search.." />
-				</form>
-				<button
-					disabled={!this.state.searchValue}
-					type="submit"
-					form="searchcategoryForm"
-					value="Submit"
-				>
-					Start Picking!
-				</button>
+				<div id="searchcategoryForm">
+					<form method="get" id="searchcategoryForm">
+						<TextField onChange={this.onChange} type="text" placeholder="Search.." />
+					</form>
+				</div>
+				<div id="searchcategoryButton">
+					<Button
+						disabled={!this.state.searchValue}
+						variant="contained"
+						type="submit"
+						form="searchcategoryForm"
+						value="Submit"
+					>
+						Start Picking!
+					</Button>
+				</div>
 			</div>
 		);
 	}
