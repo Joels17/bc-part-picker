@@ -3,14 +3,24 @@ import { createSlice } from '@reduxjs/toolkit';
 export const cartSlice = createSlice({
 	name: 'cart',
 	initialState: {
-		items: {},
+		items: [],
 	},
 	reducers: {
 		initItems: (state, partTypes) => {
-			state.items[''] = partTypes;
+			partTypes.payload.forEach((element) => {
+				state.items.push({ partType: element, name: element });
+			});
 		},
 
-		addItem: (state, item) => {},
+		addItem: (state, item) => {
+			console.log(item.payload);
+			for (var i in state.items) {
+				if (state.items[i].partType == item.payload.partType) {
+					state.items[i].name = item.payload.name;
+					break;
+				}
+			}
+		},
 		deleteItem: (state, item) => {
 			state.items.delete(item.payload.id);
 		},

@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PartSelector from './PartSelector';
-
-const temp = ['Board', 'Trucks', 'Wheels'];
+import { useSelector, useDispatch } from 'react-redux';
 
 function PartSelectorList() {
+	const [isLoaded, setIsLoaded] = useState(false);
+	const cart = useSelector((state) => state.cart.items);
+	useEffect(() => {
+		setIsLoaded(true);
+	}, [cart]);
 	return (
 		<div id="partselectorlist">
-			{temp.map((partType) => (
-				<PartSelector key={partType} partName={partType} />
-			))}
+			{isLoaded
+				? cart.map((part) => <PartSelector key={part.partType} part={part} />)
+				: ''}
 		</div>
 	);
 }

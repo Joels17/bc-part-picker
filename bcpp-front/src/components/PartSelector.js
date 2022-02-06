@@ -6,7 +6,7 @@ function PartSelector(props) {
 	const dispatch = useDispatch();
 
 	const onSubmit = (e) => {
-		dispatch(setPartType(props.partName));
+		dispatch(setPartType(props.part.partType));
 	};
 
 	return (
@@ -15,7 +15,7 @@ function PartSelector(props) {
 				<button onClick={onSubmit}>Add</button>
 			</div>
 			<div className="innerColumnRight">
-				<p>{props.partName}</p>
+				<p>{props.part.name}</p>
 			</div>
 		</div>
 	);
