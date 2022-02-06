@@ -1,38 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { mainPage, partsPage } from '../slices/pageSlice';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-export default class SearchCategory extends React.Component {
-	constructor() {
-		super();
-		this.state = { searchValue: '' };
-		this.onChange = this.onChange.bind(this);
-	}
+function SearchCategory() {
+	const [searchValue, setSearchValue] = useState('');
+	const [jsonData, setJsonData] = useState([]);
 
-	onChange(e) {
-		this.setState({ searchValue: e.target.value });
-	}
+	const page = useSelector((state) => state.page.value);
+	const dispatch = useDispatch();
 
-	render() {
-		return (
-			<div id="searchcategory">
-				<div id="searchcategoryForm">
-					<form method="get" id="searchcategoryForm">
-						<TextField onChange={this.onChange} type="text" placeholder="Search.." />
-					</form>
-				</div>
-				<div id="searchcategoryButton">
-					<Button
-						disabled={!this.state.searchValue}
-						variant="contained"
-						type="submit"
-						form="searchcategoryForm"
-						value="Submit"
-					>
-						Start Picking!
-					</Button>
-				</div>
-			</div>
-		);
-	}
+	const onChange = (e) => {
+		setSearchValue(e.target.value);
+	};
+
+	const onSubmit = (e) => {
+		e.preventDefault();
+		fetch('http://127.0.0.1:3000/parts')
+			.then((res) => res.json())
+			.then((json) => {
+				console.log(json);
+				setJsonData(json);
+				dispatch(partsPage());
+			});
+	};
+
+	return (
+		<div id="searchcategory">
+			<form method="get" id="searchcategoryForm" onSubmit={onSubmit}>
+				<TextField onChange={onChange} type="text" placeholder="Search.." />
+			</form>
+			<Button
+				disabled={!searchValue}
+				variant="contained"
+				type="submit"
+				form="searchcategoryForm"
+				value="Submit"
+			>
+				Start Picking!
+			</Button>
+			{jsonData ? jsonData.map((item) => <p key={item.id}>{item.name}</p>) : ''}
+		</div>
+	);
 }
+
+export default SearchCategory;
