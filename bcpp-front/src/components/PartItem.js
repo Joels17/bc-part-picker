@@ -4,7 +4,6 @@ function PartItem(props) {
 	return (
 		<div id="partitem">
 			<h4>{props.title}</h4>
-			<p>{props.body}</p>
 			<button>Add to Selection</button>
 		</div>
 	);

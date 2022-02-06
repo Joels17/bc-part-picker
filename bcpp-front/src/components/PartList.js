@@ -1,15 +1,17 @@
 import React from 'react';
 import PartItem from './PartItem';
 
-const temp = [{ name: 'Wicked wheelz' }, { name: 'Wacky wheels' }];
+const temp = ['Wacky wheelz', 'Wicked wheelos'];
 
 function PartList(props) {
 	return (
 		<div id="partlist">
 			<h3>{props.partType}</h3>
-			{temp.map((part) => {
-				<PartItem title={part.name} />;
-			})}
+			<div>
+				{temp.map((part) => (
+					<PartItem key={part} title={part} />
+				))}
+			</div>
 		</div>
 	);
 }
