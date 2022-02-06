@@ -23,13 +23,12 @@
 }
 
 .innerColumnLeft {
-  float: left;
-  width: 50%;
+  width: 1%;
   display: flex;
   flex-wrap: wrap;
+  column-width: 10px;
   flex: 1;
   flex-direction: column;
-  column-fill: balance;
 }
 
 #columnList {
