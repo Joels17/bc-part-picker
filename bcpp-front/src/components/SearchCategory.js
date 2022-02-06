@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { mainPage, partsPage } from '../slices/pageSlice';
+import { initItems } from '../slices/cartSlice';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 function SearchCategory() {
 	const [searchValue, setSearchValue] = useState('');
-	const [jsonData, setJsonData] = useState([]);
-
+	const [searchError, setSearchError] = useState('');
 	const page = useSelector((state) => state.page.value);
 	const dispatch = useDispatch();
 
@@ -17,21 +17,32 @@ function SearchCategory() {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		fetch('http://127.0.0.1:3000/parts')
+		fetch(`http://127.0.0.1:3000/categoriesearch/${searchValue}`)
 			.then((res) => res.json())
 			.then((json) => {
 				console.log(json);
-				setJsonData(json);
-				dispatch(partsPage());
+				if (json) {
+					dispatch(initItems(json));
+					dispatch(partsPage());
+				} else {
+					setSearchError(`${searchValue} is not a valid category`);
+				}
 			});
 	};
 
 	return (
-		<div id="searchcategory">
-			<form method="get" id="searchcategoryForm" onSubmit={onSubmit}>
+		<div id="searchcategory" className="center">
+			<form
+				class="center"
+				method="get"
+				id="searchcategoryForm"
+				onSubmit={onSubmit}
+			>
 				<TextField onChange={onChange} type="text" placeholder="Search.." />
 			</form>
+			{searchError ? <p>{searchError}</p> : ''}
 			<Button
+				id="searchcategoryButton"
 				disabled={!searchValue}
 				variant="contained"
 				type="submit"
@@ -40,7 +51,6 @@ function SearchCategory() {
 			>
 				Start Picking!
 			</Button>
-			{jsonData ? jsonData.map((item) => <p key={item.id}>{item.name}</p>) : ''}
 		</div>
 	);
 }

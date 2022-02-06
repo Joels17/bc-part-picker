@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2022_02_06_121419) do
   end
 
   create_table "parts", charset: "utf8mb4", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "name"
     t.string "part_type"
     t.integer "size_id"

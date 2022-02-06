@@ -10,8 +10,12 @@ Category.create(name: 'Skis')
 Category.create(name: 'Guitar')
 
 f = Category.first
-f.parts.create(name: "Alpine Binding", part_type: "ski binding", size_id: rand(1..3))
-f.parts.create(name: "Backcountry Binding", part_type: "ski binding", size_id: rand(1..3))
+f.parts.create(name: "Alpine Binding", part_type: "ski binding", size_id: 1)
+f.parts.create(name: "Backcountry Binding", part_type: "ski binding", size_id: 1)
+f.parts.create(name: "Touring Binding", part_type: "ski binding", size_id: 3)
+f.parts.create(name: "Sus Binding", part_type: "ski binding", size_id: 1)
+f.parts.create(name: "Navis Freebirds", part_type: "board", size_id: 3)
+f.parts.create(name: "Bent Chetlers", part_type: "board", size_id: 2)
 
 f = Category.last
 f.parts.create(name: "epic super truck super nuts in your mouth", part_type: "nut", size_id: rand(1..3))

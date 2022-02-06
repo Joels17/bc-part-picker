@@ -9,9 +9,12 @@ class CategoriesController < ApplicationController
     end
 
     def search
-      @categories = Category.where(name: params[:name])
+      if params[:name]
+        @categories = Category.where(name: params[:name])
+      end
       if !@categories.empty?
-        @parts = @categories[0].parts
+        # @parts = @categories[0].parts
+      @parts =  Part.where(category_id: @categories[0].id).distinct.pluck(:part_type)
       end
       # if @parts.empty?
       #   @parts = Part.all
@@ -19,6 +22,12 @@ class CategoriesController < ApplicationController
       # else
         render json: @parts
       # end
+    end
+
+    def build_gear
+      @parts = Part.where(part_type: params[:part_type])
+      render json: @parts
+
     end
 
     # GET /categories/1
