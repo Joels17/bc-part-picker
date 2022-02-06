@@ -8,10 +8,10 @@ function PartsPage() {
 			<p>Parts page!!!</p>
 			<div id="flexthis" className="row">
 				<div className="column">
-				<PartSelectorList />
+					<PartSelectorList />
 				</div>
 				<div id="columnList" className="column">
-				<PartList partType="Wheels" />
+					<PartList partType="Wheels" />
 				</div>
 			</div>
 		</div>
