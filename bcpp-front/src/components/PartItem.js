@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addItem } from '../slices/cartSlice';
+import Button from '@mui/material/Button';
+
 
 function PartItem(props) {
 	const dispatch = useDispatch();
@@ -22,7 +24,9 @@ function PartItem(props) {
 	return (
 		<div id="partitem">
 			<h4>{props.title}</h4>
-			<button onClick={onClick}>Add to Selection</button>
+			<button id="btnAdd">
+				<Button variant='contained' Click={onClick}>Add to Selection</Button>
+			</button>
 		</div>
 	);
 }

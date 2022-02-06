@@ -5,6 +5,8 @@
 	"poxy": "http://127.0.0.1:3000/",
 	"dependencies": {
 		"@emotion/styled": "^11.6.0",
+		"@material/icon-button": "^13.0.0",
+		"@mui/icons-material": "^5.3.1",
 		"@mui/material": "^5.4.0",
 		"@reduxjs/toolkit": "^1.7.2",
 		"@testing-library/jest-dom": "^5.16.2",
