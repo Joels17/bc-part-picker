@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { mainPage, partsPage } from '../slices/pageSlice';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 function SearchCategory() {
 	const [searchValue, setSearchValue] = useState('');
@@ -27,16 +29,17 @@ function SearchCategory() {
 	return (
 		<div id="searchcategory">
 			<form method="get" id="searchcategoryForm" onSubmit={onSubmit}>
-				<input onChange={onChange} type="text" placeholder="Search.." />
+				<TextField onChange={onChange} type="text" placeholder="Search.." />
 			</form>
-			<button
+			<Button
 				disabled={!searchValue}
+				variatn="contained"
 				type="submit"
 				form="searchcategoryForm"
 				value="Submit"
 			>
 				Start Picking!
-			</button>
+			</Button>
 			{jsonData ? jsonData.map((item) => <p key={item.id}>{item.name}</p>) : ''}
 		</div>
 	);
