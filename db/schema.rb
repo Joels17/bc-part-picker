@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_06_050115) do
+ActiveRecord::Schema.define(version: 2022_02_06_121419) do
 
-  create_table "gears", charset: "utf8mb4", force: :cascade do |t|
+  create_table "categories", charset: "utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "part_list"
-    t.string "category"
+    t.string "name"
   end
 
   create_table "parts", charset: "utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.string "category"
     t.string "part_type"
+    t.integer "size_id"
+    t.integer "category_id"
   end
 
 end
