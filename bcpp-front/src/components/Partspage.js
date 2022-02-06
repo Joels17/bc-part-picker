@@ -6,9 +6,13 @@ function PartsPage() {
 	return (
 		<div id="partpage">
 			<p>Parts page!!!</p>
-			<div id="flexthis">
+			<div id="flexthis" className="row">
+				<div className="column">
 				<PartSelectorList />
+				</div>
+				<div className="column">
 				<PartList partType="Wheels" />
+				</div>
 			</div>
 		</div>
 	);
