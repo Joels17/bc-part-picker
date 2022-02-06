@@ -4,13 +4,31 @@
 
 .column {
   float: left;
-  border: 3px solid black;
+  border: 1px solid black;
   width: 50%;
   display: flex;
   flex-wrap: wrap;
   flex: 1;
   flex-direction: column;
   column-fill: balance;
+}
+
+.innerColumnRight {
+  float: left;
+  width: 50%;
+  font-weight: bold;
+  flex-wrap: wrap;
+  flex-direction: column;
+  column-fill: balance;
+}
+
+.innerColumnLeft {
+  width: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  column-width: 10px;
+  flex: 1;
+  flex-direction: column;
 }
 
 #columnList {
@@ -25,7 +43,7 @@
 }
 
 body {
-  background: rgb(255, 255, 255);
+  //background: rgb(255, 255, 255);
 }
 
 .row {
@@ -34,10 +52,10 @@ body {
   display: flex;
   flex: 1;
   flex-direction: row;
-  display: inline-block;
+  display: flex;
   flex-wrap: wrap;
   width: 99%;
-  background-color: green;
+  background-color: orange;
 }
 
 .row2 {
@@ -50,6 +68,7 @@ body {
   font-family: fantasy;
   text-align: center;
   font-size: 5em;
+  background: white;
 }
 
 #partselector {
