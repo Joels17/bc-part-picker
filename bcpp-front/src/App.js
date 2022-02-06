@@ -6,7 +6,7 @@ function App() {
 	const page = useSelector((state) => state.page.value);
 	return (
 		<div className="App">
-			{page == 'mainpage' ? <Mainpage /> : <PartsPage />}
+			{page == 'mainpage' ? <PartsPage /> : <Mainpage />}
 		</div>
 	);
 }
