@@ -10,9 +10,13 @@ function PartSelector(props) {
 	};
 
 	return (
-		<div id="partselector">
-			<button onClick={onSubmit}>Add</button>
-			<p>{props.partName}</p>
+		<div id="partselector" className="row2">
+			<div className="column">
+				<button onClick={onSubmit}>Add</button>
+			</div>
+			<div className="column">
+				<p>{props.partName}</p>
+			</div>
 		</div>
 	);
 }

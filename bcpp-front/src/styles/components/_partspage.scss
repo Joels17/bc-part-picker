@@ -1,5 +1,5 @@
 #flexthis {
-  background-color: yellow;
+  //background-color: yellow;
 }
 
 .column {
@@ -7,6 +7,7 @@
   border: 3px solid black;
   width: 50%;
   display: flex;
+  flex-wrap: wrap;
   flex: 1;
   flex-direction: column;
   column-fill: balance;
@@ -17,9 +18,10 @@
 }
 
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+  //content: "";
+  //display: table;
+  //clear: both;
+  background-color: orange;
 }
 
 body {
@@ -27,10 +29,31 @@ body {
 }
 
 .row {
-  height: 90%;
+  height: 85%;
   position: absolute;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  display: inline-block;
+  flex-wrap: wrap;
+  width: 99%;
+  background-color: green;
+}
+
+.row2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 99%;
+}
+
+#partPageTitle {
+  font-family: fantasy;
+  text-align: center;
+  font-size: 5em;
+}
+
+#partselector {
+  flex: wrap;
+  flex-direction: row;
+  //background-color: green;
 }
