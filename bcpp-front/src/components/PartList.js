@@ -1,17 +1,28 @@
 import React from 'react';
 import PartItem from './PartItem';
+import { useSelector, useDispatch } from 'react-redux';
 
-const temp = ['Wacky wheelz', 'Wicked wheelos'];
+const temp = [
+	{ name: 'Wacky wheelz', id: 1 },
+	{ name: 'Wicked wheelos', id: 2 },
+];
 
 function PartList(props) {
+	const partType = useSelector((state) => state.page.partType);
 	return (
 		<div id="partlist">
-			<h3>{props.partType}</h3>
-			<div>
-				{temp.map((part) => (
-					<PartItem key={part} title={part} />
-				))}
-			</div>
+			{partType === 'null' ? (
+				''
+			) : (
+				<div>
+					<h4>{partType.payload}</h4>
+					<div>
+						{temp.map((part) => (
+							<PartItem key={part.id} id={part.id} title={part.name} />
+						))}
+					</div>
+				</div>
+			)}
 		</div>
 	);
 }
