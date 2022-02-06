@@ -10,7 +10,7 @@ function PartsPage() {
 				<div className="column">
 				<PartSelectorList />
 				</div>
-				<div className="column">
+				<div id="columnList" className="column">
 				<PartList partType="Wheels" />
 				</div>
 			</div>
