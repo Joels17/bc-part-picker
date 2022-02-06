@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+Part.create(name: "Alpine Binding")
+Part.create(name: "Backcountry Binding")
+Part.create(name: "Red", category: "Skateboard")
+Part.create(name: "FUcking lit company truck non nuts", part_type: "truck")
