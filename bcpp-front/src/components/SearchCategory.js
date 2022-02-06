@@ -33,7 +33,7 @@ function SearchCategory() {
 			</form>
 			<Button
 				disabled={!searchValue}
-				variatn="contained"
+				variant="contained"
 				type="submit"
 				form="searchcategoryForm"
 				value="Submit"
