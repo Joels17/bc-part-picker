@@ -6,7 +6,7 @@ import Textbox from './Textbox';
 export default class Mainpage extends React.Component {
 	render() {
 		return (
-			<div id="header">
+			<div id="mainpage">
 				<Header />
 				<Textbox
 					title="Start Picking"
