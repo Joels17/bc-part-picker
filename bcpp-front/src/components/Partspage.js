@@ -5,7 +5,9 @@ import PartList from './PartList';
 function PartsPage() {
 	return (
 		<div id="partpage">
-			<p>Parts page!!!</p>
+			<div id="partPageTitle">
+				<p1>Parts page!!!</p1>
+			</div>
 			<div id="flexthis" className="row">
 				<div className="column">
 				<PartSelectorList />
