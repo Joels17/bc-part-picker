@@ -28,10 +28,14 @@ export const cartSlice = createSlice({
 			state.items.delete(oldItem.payload.id);
 			state.items[newItem.payload.id] = newItem.payload.name;
 		},
+		deleteAll: (state) => {
+			state.items = [];
+		},
 	},
 });
 
 // Action creators are generated for each case reducer function
-export const { addItem, deleteItem, editItem, initItems } = cartSlice.actions;
+export const { addItem, deleteItem, editItem, initItems, deleteAll } =
+	cartSlice.actions;
 
 export default cartSlice.reducer;

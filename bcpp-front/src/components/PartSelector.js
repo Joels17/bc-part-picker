@@ -11,17 +11,17 @@ function PartSelector(props) {
 	};
 
 	return (
-		<div id='ps'>
-		<div id="partselector" className="row2">
-			<div className="innerColumnLeft">
-				<button id="btnAdd">
-					<Button variant='contained' onClick={onSubmit}>Add</Button>
-				</button>
+		<div id="ps">
+			<div id="partselector" className="row2">
+				<div className="innerColumnLeft">
+					<Button variant="contained" onClick={onSubmit}>
+						SELECT / EDIT
+					</Button>
+				</div>
+				<div className="innerColumnRight">
+					<p>{props.part.name}</p>
+				</div>
 			</div>
-			<div className="innerColumnRight">
-				<p>{props.part.name}</p>
-			</div>
-		</div>
 		</div>
 	);
 }
