@@ -10,3 +10,5 @@
 
 Part.create(name: "Alpine Binding")
 Part.create(name: "Backcountry Binding")
+Part.create(name: "Red", category: "Skateboard")
+Part.create(name: "FUcking lit company truck non nuts", part_type: "truck")
