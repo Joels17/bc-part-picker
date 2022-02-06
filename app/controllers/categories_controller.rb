@@ -25,6 +25,8 @@ class CategoriesController < ApplicationController
     end
 
     def build_gear
+      @parts = Part.where(part_type: params[:part_type])
+      render json: @parts
 
     end
 
