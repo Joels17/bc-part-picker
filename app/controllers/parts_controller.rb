@@ -8,6 +8,16 @@ class PartsController < ApplicationController
     render json: @parts
   end
 
+  def search
+    @parts = Part.where(category: params[:category])
+    # if @parts.empty?
+    #   @parts = Part.all
+    #   render json: @parts
+    # else
+      render json: @parts
+    # end
+  end
+
   # GET /parts/1
   def show
     render json: @part
