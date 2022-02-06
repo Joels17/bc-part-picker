@@ -6,7 +6,7 @@ function PartsPage() {
 	return (
 		<div id="partpage">
 			<div id="partPageTitle">
-				<p1>Parts page!!!</p1>
+				<p>Parts page!!!</p>
 			</div>
 			<div id="flexthis" className="row">
 				<div className="column">
