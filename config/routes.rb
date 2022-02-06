@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'categoriesearch/:name', to: 'categories#search'
   get 'compare/:id', to: 'parts#compare'
   get 'build/:part_type', to: 'categories#build_gear'
+
 end
