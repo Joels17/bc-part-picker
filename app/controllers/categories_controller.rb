@@ -9,7 +9,9 @@ class CategoriesController < ApplicationController
     end
 
     def search
-      @categories = Category.where(name: params[:name])
+      if params[:name]
+        @categories = Category.where(name: params[:name])
+      end
       if !@categories.empty?
         @parts = @categories[0].parts
       end

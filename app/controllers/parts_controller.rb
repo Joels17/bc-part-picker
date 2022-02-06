@@ -8,6 +8,21 @@ class PartsController < ApplicationController
     render json: @parts
   end
 
+  def compare
+    @part = Part.where(id: params[:id])
+    if !@part.empty?
+      @compatible_list = Part.where("id != ? AND category_id = ? AND size_id = ?", params[:id], @part[0].category_id, @part[0].size_id)
+      if !@compatible_list.empty?
+        render json: @compatible_list
+      else
+        render json: nil
+      end
+    else
+      render json: nil
+    end
+
+  end
+
   # GET /parts/1
   def show
     render json: @part
