@@ -11,10 +11,10 @@ function PartSelector(props) {
 
 	return (
 		<div id="partselector" className="row2">
-			<div className="column">
+			<div className="innerColumnLeft">
 				<button onClick={onSubmit}>Add</button>
 			</div>
-			<div className="column">
+			<div className="innerColumnRight">
 				<p>{props.partName}</p>
 			</div>
 		</div>
