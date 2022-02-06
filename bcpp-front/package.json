@@ -2,6 +2,7 @@
 	"name": "bcpp-front",
 	"version": "0.1.0",
 	"private": true,
+	"poxy": "http://127.0.0.1:3000/",
 	"dependencies": {
 		"@emotion/styled": "^11.6.0",
 		"@mui/material": "^5.4.0",

@@ -32,6 +32,7 @@ function SearchCategory() {
 				<TextField onChange={onChange} type="text" placeholder="Search.." />
 			</form>
 			<Button
+				id="searchcategoryButton"
 				disabled={!searchValue}
 				variant="contained"
 				type="submit"
